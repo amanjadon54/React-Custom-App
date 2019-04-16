@@ -1,0 +1,55 @@
+.header {
+  margin: 15px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.form {
+}
+
+.firstname {
+  padding-left: 15px;
+  padding-top: 40px;
+  font-weight: bold;
+  & :global(.bp3-label) {
+    color: black !important;
+  }
+}
+
+.lastname {
+  padding-left: 15px;
+  padding-top: 40px;
+  font-weight: bold;
+  & :global(.bp3-label) {
+    color: black !important;
+  }
+}
+
+.email {
+  padding-left: 15px;
+  padding-top: 40px;
+  font-weight: bold;
+  & :global(.bp3-label) {
+    color: black !important;
+  }
+}
+
+.inputFirstname {
+  width: 500px;
+  padding-left: 25px;
+}
+
+.inputLastname {
+  width: 500px;
+  padding-left: 26px;
+}
+
+.inputMail {
+  width: 518px;
+  padding-left: 43px;
+}
+
+.footer {
+  margin-left: 15px;
+  margin-top: 40px;
+}

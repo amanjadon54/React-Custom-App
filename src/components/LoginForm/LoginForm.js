@@ -1,19 +1,32 @@
 import React from 'react';
-import { FormGroup, InputGroup } from '@blueprintjs/core';
+
+import { FormGroup, InputGroup, Button } from '@blueprintjs/core';
+
+import css from './LoginForm.css';
 
 const LoginForm = () => {
   return (
-    <FormGroup
-      disabled={false}
-      helperText={false}
-      inline={false}
-      label="Login"
-      // labelFor="text-input"
-      labelInfo="(required)"
-    >
-      <InputGroup id="userId" placeholder="Enter User Id" disabled={false} />
-      <InputGroup id="password" placeholder="Enter Password" disabled={false} />
-    </FormGroup>
+    <div>
+      <header className={css.header}>Welcome, Sign In !!!</header>
+
+      <form className={css.form}>
+        <FormGroup
+          label="User Id"
+          labelFor="user"
+          inline
+          className={css.user}
+          contentClassName={css.content}
+        >
+          <InputGroup id="user" placeholder="Enter User Id" round />
+        </FormGroup>
+
+        <FormGroup label="Password" labelFor="pass" inline className={css.pass}>
+          <InputGroup id="password" placeholder="Enter Password" round type="Password" />
+        </FormGroup>
+      </form>
+
+      <Button text="Sign In" intent="PRIMARY" className={css.footer} icon="log-in" />
+    </div>
   );
 };
 

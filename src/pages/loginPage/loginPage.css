@@ -1,0 +1,99 @@
+.root {
+  overflow: hidden;
+
+  height: 100%;
+
+  background: url(./bp.jpg);
+
+  filter: alpha(opacity=50);
+
+  z-index: -1;
+
+  background-position: 50% 50%;
+
+  -webkit-background-size: cover;
+
+  -moz-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-size: cover;
+
+  display: flex;
+}
+
+.form {
+  height: 100%;
+
+  bottom: 0;
+}
+
+.login {
+  padding: 35px 35px;
+
+  margin-top: 10px;
+
+  border-radius: 5px;
+
+  background: rgba(143, 188, 139, 0.9);
+
+  color: black;
+}
+
+.signup {
+  padding: 35px 35px;
+
+  margin-top: 20px;
+
+  margin-bottom: 20px;
+
+  border-radius: 5px;
+
+  background: rgba(143, 188, 139, 0.9);
+
+  height: 65%;
+
+  bottom: 0;
+
+  color: black;
+}
+
+img[id="logo"] {
+  border-radius: 10%;
+
+  border: 5px solid #137cbd;
+
+  align-content: center;
+
+  opacity: 0.9;
+
+  height: 50%;
+
+  filter: grayscale(50%);
+
+  margin-left: 10px;
+}
+
+.leftPanel {
+  margin-right: 12%;
+
+  margin-left: 10%;
+
+  margin-top: 10%;
+}
+
+.gmt {
+  font-size: 18vh;
+
+  padding-right: 5px;
+
+  font-weight: bold;
+
+  font-stretch: condensed;
+
+  color: #137cbd;
+
+  opacity: 0.9;
+
+  /*text-shadow: 2px 2px green;*/
+}

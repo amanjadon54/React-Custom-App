@@ -15,13 +15,13 @@ const banner = `
 
     Generated on: ${new Date(Date.now()).toLocaleString()}`;
 
-const { HOST = '0.0.0.0', PORT = 3000, NODE_ENV } = process.env;
+const { HOST = '0.0.0.0', PORT = 3000 } = process.env;
 
 // eslint-disable-next-line max-lines-per-function
 
 module.exports = (env, argv) => {
   const isProd = argv && argv.mode === 'production';
-  const isDev = NODE_ENV === 'development';
+  const isDev = argv.mode === 'development';
   const modulesFolderPath = path.resolve(__dirname, 'node_modules');
 
   return {
@@ -91,9 +91,7 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           include: path.resolve(__dirname, modulesFolderPath),
-          use: isProd
-            ? [MiniCssExtractPlugin.loader, 'css-loader']
-            : ['style-loader', 'css-loader']
+          use: isProd ? [MiniCssExtractPlugin.loader, 'css-loader'] : ['style-loader', 'css-loader']
         },
         {
           test: /\.css$/,
@@ -132,6 +130,7 @@ module.exports = (env, argv) => {
       public: `localhost:${PORT}`,
       open: true,
       disableHostCheck: true,
+      hot: true,
       allowedHosts: ['*.localhost']
     },
     devtool: isProd ? false : 'cheap-module-source-map',
@@ -143,7 +142,6 @@ module.exports = (env, argv) => {
             allChunks: true
           })
         : false,
-      isProd ? false : new webpack.HotModuleReplacementPlugin(),
       new ProgressBarPlugin({ clear: false }),
       new HTMLWebpaclPlugin({
         cache: true,
@@ -152,6 +150,7 @@ module.exports = (env, argv) => {
         filename: './index.html',
         package: `${pkg.name} v${pkg.version}`
       }),
+      isProd ? false : new webpack.HotModuleReplacementPlugin(),
       new webpack.BannerPlugin(banner),
       new webpack.DefinePlugin({
         WEBPACK_SAYS_IS_DEV: JSON.stringify(isDev)

@@ -1,0 +1,38 @@
+.header {
+  margin: 15px;
+
+  font-size: large;
+
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+}
+
+.content {
+}
+
+.user {
+  padding: 15px;
+
+  font-weight: bold;
+
+  & :global(.bp3-label) {
+    color: black !important;
+  }
+}
+
+.pass {
+  padding: 15px;
+
+  font-weight: bold;
+
+  & :global(.bp3-label) {
+    color: black !important;
+  }
+}
+
+.footer {
+  margin-left: 15px;
+}
