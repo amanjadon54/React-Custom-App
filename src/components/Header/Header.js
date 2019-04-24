@@ -1,9 +1,10 @@
 import React from 'react';
 import { Navbar, NavbarDivider, NavbarGroup, NavbarHeading, Button } from '@blueprintjs/core';
+import css from './Header.css';
 
 const Header = () => {
   return (
-    <Navbar>
+    <Navbar className={css.header}>
       <NavbarGroup>
         <NavbarHeading>Dashboard - GMT</NavbarHeading>
         <NavbarDivider />
