@@ -25,7 +25,13 @@ const LoginForm = () => {
         </FormGroup>
       </form>
 
-      <Button text="Sign In" intent="PRIMARY" className={css.footer} icon="log-in" />
+      <Button
+        text="Sign In"
+        intent="PRIMARY"
+        className={css.footer}
+        icon="log-in"
+        onClick={() => (window.location.hash = '/dashboard')}
+      />
     </div>
   );
 };
