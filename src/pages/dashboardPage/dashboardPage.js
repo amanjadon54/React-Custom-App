@@ -11,6 +11,26 @@ class dashboardPage extends React.Component {
         id: 'nursery2',
         name: 'oldAge',
         landDetails: { location: 'Hobbit Town', Area: '700 acres' }
+      },
+      {
+        id: 'nursery3',
+        name: 'Broomstick',
+        landDetails: { location: 'Diagon Alley', Area: '700 acres' }
+      },
+      {
+        id: 'nursery4',
+        name: 'Weasleys',
+        landDetails: { location: 'Hogsmade', Area: '700 acres' }
+      },
+      {
+        id: 'nursery5',
+        name: 'Weasleys',
+        landDetails: { location: 'Hogsmade', Area: '700 acres' }
+      },
+      {
+        id: 'nursery6',
+        name: 'Weasleys',
+        landDetails: { location: 'Hogsmade', Area: '700 acres' }
       }
     ]
   };
@@ -26,7 +46,9 @@ class dashboardPage extends React.Component {
         <div>
           <Header />
         </div>
-        <div className={css.body}>{this.renderNurseryList()}</div>
+        <div className={css.body} id="nur">
+          {this.renderNurseryList()}
+        </div>
       </div>
     );
   }
