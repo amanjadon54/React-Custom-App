@@ -21,16 +21,6 @@ class dashboardPage extends React.Component {
         id: 'nursery4',
         name: 'Weasleys',
         landDetails: { location: 'Hogsmade', Area: '700 acres' }
-      },
-      {
-        id: 'nursery5',
-        name: 'Weasleys',
-        landDetails: { location: 'Hogsmade', Area: '700 acres' }
-      },
-      {
-        id: 'nursery6',
-        name: 'Weasleys',
-        landDetails: { location: 'Hogsmade', Area: '700 acres' }
       }
     ]
   };
@@ -44,7 +34,7 @@ class dashboardPage extends React.Component {
     return (
       <div className={css.root}>
         <div>
-          <Header />
+          <Header pageTitle="DashBoard" />
         </div>
         <div className={css.body} id="nur">
           {this.renderNurseryList()}

@@ -2,3 +2,8 @@
   background: green !important;
   color: white;
 }
+
+.logOut {
+  float: right;
+  padding-left: 55px;
+}

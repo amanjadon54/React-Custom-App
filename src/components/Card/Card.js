@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card as BlueprintCard } from '@blueprintjs/core';
+import { Card as BlueprintCard, Button } from '@blueprintjs/core';
 import css from './Card.css';
-import Map from '../Map';
+// import Map from '../Map';
 
 const renderData = (data) => {
   const keys = Object.keys(data);
@@ -10,8 +10,12 @@ const renderData = (data) => {
       return renderData(data[key]);
     }
     return (
-      <p style={{ color: 'black' }}>
-        {key} : {data[key]}
+      <p style={{ color: 'black', display: 'inline-block' }}>
+        <ul>
+          <li>
+            {key} : {data[key]}
+          </li>
+        </ul>
       </p>
     );
   });
@@ -22,11 +26,23 @@ const renderCard = (nur) => {
     <BlueprintCard
       elevation={2}
       className={css.nursery}
-      style={{ padding: '5px', margin: '10px' }}
+      style={{ padding: '5px', margin: '10px', background: 'grey', fontWeight: 'bold' }}
       key={nur.id}
     >
-      <Map />
+      {/* <Map /> */}
       {renderData(nur)}
+      <Button
+        icon="more"
+        text="Open"
+        style={{
+          float: 'right',
+          marginTop: '25px',
+          marginBottom: '0px',
+          backgroundColor: '#48aff0',
+          color: 'white'
+        }}
+        onClick={() => (window.location.hash = '/details')}
+      />
     </BlueprintCard>
   );
 };
