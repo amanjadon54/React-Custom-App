@@ -4,6 +4,12 @@
 }
 
 .logOut {
-  float: right;
-  padding-left: 55px;
+  justify-content: flex-end;
+}
+
+.btn {
+  color: white !important;
+  & :global(.bp3-icon) {
+    color: white !important;
+  }
 }

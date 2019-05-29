@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 import DrawControl from 'react-mapbox-gl-draw';
+import Layout from 'components/Layout';
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
-import Header from 'components/Header';
 import css from './nurseryDetailspage.css';
 
 const TOKEN =
@@ -21,12 +21,13 @@ class nurseryDetailspage extends React.Component {
     console.log({ features });
   };
 
+  // onDrawDelete = ({ features }) => {
+  //   console.log({ features });
+  // };
+
   render() {
     return (
-      <div className={css.root}>
-        <div>
-          <Header pageTitle="Nursery Details" />
-        </div>
+      <Layout className={css.root} PageTitle="Nursery Details">
         <Map
           style="mapbox://styles/mapbox/satellite-v9" // eslint-disable-line
           containerStyle={{
@@ -39,9 +40,10 @@ class nurseryDetailspage extends React.Component {
             position="top-left"
             onDrawCreate={this.onDrawCreate}
             onDrawUpdate={this.onDrawUpdate}
+            onDrawDelete={this.onDrawDelete}
           />
         </Map>
-      </div>
+      </Layout>
     );
   }
 }

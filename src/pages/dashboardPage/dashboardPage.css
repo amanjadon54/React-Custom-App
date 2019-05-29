@@ -2,4 +2,20 @@
 }
 
 .body {
+  margin: 100px;
+}
+
+.create {
+  float: right;
+  margin-top: 10px;
+  margin-right: 52px;
+  background: darkgreen !important;
+  color: white !important;
+  & :global(.bp3-icon) {
+    color: white !important;
+  }
+}
+
+.nur {
+  padding: 50px;
 }

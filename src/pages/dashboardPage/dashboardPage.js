@@ -1,10 +1,14 @@
 import React from 'react';
-import Header from 'components/Header';
+
+import { Button } from '@blueprintjs/core';
+import CreateNurseryDialog from 'components/CreateNurseryDialog';
 import Card from 'components/Card';
+import Layout from 'components/Layout';
 import css from './dashboardPage.css';
 
 class dashboardPage extends React.Component {
   state = {
+    isDialogOpen: false,
     nurseries: [
       { id: 'nursery1', name: 'newAge', landDetails: { location: 'Hogwarts', Area: '500 acres' } },
       {
@@ -27,19 +31,26 @@ class dashboardPage extends React.Component {
 
   renderNurseryList = () => {
     const { nurseries } = this.state;
+
     return <Card nurseryDetails={nurseries} />;
   };
 
+  handleDialogOpen = () => this.setState({ isDialogOpen: true });
+
+  handleDialogClose = () => this.setState({ isDialogOpen: false });
+
   render() {
+    const { isDialogOpen } = this.state;
     return (
-      <div className={css.root}>
-        <div>
-          <Header pageTitle="DashBoard" />
-        </div>
-        <div className={css.body} id="nur">
-          {this.renderNurseryList()}
-        </div>
-      </div>
+      <Layout className={css.root} PageTitle="Dashboard">
+        <header>
+          <Button onClick={this.handleDialogOpen} className={css.create} icon="new-object">
+            Create New Nursery
+          </Button>
+        </header>
+        <div className={css.nur}>{this.renderNurseryList()}</div>
+        <CreateNurseryDialog isOpen={isDialogOpen} onClose={this.handleDialogClose} />
+      </Layout>
     );
   }
 }

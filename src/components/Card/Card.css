@@ -1,7 +1,13 @@
 .nursery {
   overflow: scroll;
-  padding: '5px';
-  margin: '10px';
-  background: 'grey';
+  background: olive;
   font-weight: 'bold';
+}
+
+.slider {
+  margin: '10px';
+  color: black;
+  & :global(.bp3-intent-primary) {
+    background-color: green !important;
+  }
 }
